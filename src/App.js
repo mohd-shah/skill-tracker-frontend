@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import SearchPanel from "./components/SearchPanel/SearchPanel";
+import ResultPanel from "./components/ResultPanel/ResultPanel";
+import { Container, Navbar } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar bg="primary" variant="dark" className="mb-3">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src="/skill-tracker-logo.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            Skill Tracker
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      <div className="col-sm-12 px-3 App">
+        <SearchPanel></SearchPanel>
+        <ResultPanel></ResultPanel>
+      </div>
+    </>
   );
 }
 
