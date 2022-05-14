@@ -1,11 +1,16 @@
-import React, { Component } from "react";
-import { Col, Row, Table } from "react-bootstrap";
+import React, { PureComponent } from "react";
 import SkillRow from "./SkillRow/SkillRow";
 
-export default class ResultPanel extends Component {
+export default class ResultPanel extends PureComponent {
+  
   render() {
+    const { data } = this.props;
     return (
-      <SkillRow></SkillRow>
+      <>
+        {data.map((row) => (
+          <SkillRow row={row} key={row.profileId}></SkillRow>
+        ))}
+      </>
     );
   }
 }

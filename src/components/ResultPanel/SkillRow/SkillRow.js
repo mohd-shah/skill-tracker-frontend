@@ -1,98 +1,59 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Col, Row, Table } from "react-bootstrap";
 
-export default class SkillRow extends Component {
+export default class SkillRow extends PureComponent {
   render() {
+    let row = this.props.row;
     return (
       <>
         <hr></hr>
         <Row className="mt-3">
           <Col>
+            <h5>Basic Details</h5>
             <Table striped bordered hover>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <th>Name</th>
+                  <td>{row.name}</td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                  <th>Associate Id</th>
+                  <td>{row.associateId}</td>
                 </tr>
                 <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <th>Email</th>
+                  <td>{row.email}</td>
+                </tr>
+                <tr>
+                  <th>Mobile</th>
+                  <td>{row.mobile}</td>
                 </tr>
               </tbody>
             </Table>
           </Col>
           <Col>
+            <h5>Technical Skills</h5>
             <Table striped bordered hover>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+                {row.technicalSkills.map((skill) => (
+                  <tr key={skill.id}>
+                    <th>{skill.name}</th>
+                    <td>{skill.level}</td>
+                  </tr>
+                ))}
               </tbody>
             </Table>
           </Col>
           <Col>
+            <h5>Non Technical Skills</h5>
             <Table striped bordered hover>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+                {row.nonTechnicalSkills.map((skill) => (
+                  <tr key={skill.id}>
+                    <th>{skill.name}</th>
+                    <td>{skill.level}</td>
+                  </tr>
+                ))}
               </tbody>
             </Table>
           </Col>
