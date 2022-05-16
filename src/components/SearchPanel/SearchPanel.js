@@ -58,6 +58,7 @@ export default class SearchPanel extends Component {
               </Form.Label>
               <Col sm={10}>
                 <Form.Control
+                  className="name"
                   type="text"
                   name="name"
                   value={this.state.name}
@@ -75,6 +76,7 @@ export default class SearchPanel extends Component {
               <Col sm={10}>
                 <Form.Control
                   type="text"
+                  className="associateId"
                   name="associateId"
                   value={this.state.associateId}
                   onChange={this.handleChange}
@@ -88,6 +90,7 @@ export default class SearchPanel extends Component {
               <Col sm={10}>
                 <Form.Select
                   aria-label="Skill"
+                  className="skill"
                   name="skill"
                   value={this.state.skill}
                   onChange={this.handleChange}
@@ -109,6 +112,7 @@ export default class SearchPanel extends Component {
             </Form.Group>
             <div className="text-center">
               <Button
+                className="searchProfiles"
                 variant="primary"
                 type="button"
                 onClick={this.handleClick}

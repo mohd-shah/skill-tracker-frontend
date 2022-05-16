@@ -30,6 +30,7 @@ function App() {
       </Navbar>
       <div className="col-sm-12 px-3 App">
         <ToastContainer
+          className="error-container"
           position="top-center"
           autoClose={5000}
           hideProgressBar
