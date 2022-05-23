@@ -13,10 +13,7 @@ describe("App", () => {
     render(<App />);
     userEvent.type(screen.getByLabelText("Name"), "Mark");
     userEvent.click(screen.getByText("Search"));
-    let basicDetailsHeader = await screen.findByText("Basic Details");
-    expect(basicDetailsHeader).toBeInTheDocument();
-    expect(
-      basicDetailsHeader.nextSibling.getElementsByTagName("tr").length
-    ).toBe(4);
+    let basicDetailsHeader = await screen.findAllByText("Basic Details");
+    expect(basicDetailsHeader).toHaveLength(2);
   });
 });

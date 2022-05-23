@@ -1,3 +1,3 @@
 export const config = {
-    APIURL : "http://localhost:8081/admin-service/skill-tracker/api/v1/admin"
+    APIURL : "http://localhost:8091/skill-tracker/api/v1/admin"
 }
